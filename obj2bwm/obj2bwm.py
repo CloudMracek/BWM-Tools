@@ -137,6 +137,13 @@ if __name__ == '__main__':
     for face in normal_indices:
         for indice in face:
             bwm_file.write(pack_number(indice))
-
     bwm_file.close()
     print("The file:",args.output_file, "was successfully written")
+    print("Vertex count:", len(vertices))
+    print("Vertex indices count:", len(vertex_indices))
+    print("UV count:", len(uvs))
+    print("UV indices count:", len(uv_indices))
+    print("Normal count:", len(normals))
+    print("Normal indices count:", len(normal_indices))
+
+    print(normal_indices)

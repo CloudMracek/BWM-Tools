@@ -9,6 +9,8 @@ The file format can now store the following:
 
 All of the data is indexed in order to save space by reusing vertex, uv and normal data.
 
+The format is currently limited to only quads.
+
 ## File format
 Unlike responsible file formats this one doesn't have a header. It stores data in the following way:
 
@@ -20,17 +22,17 @@ Size (in DWORDs)    Meaning
 
 [1]                 Number of faces - f_count
 [1]                 Number of vertices - v_count
-[v_count]           Vertex coordinates (3 DWORDs each)
+[v_count*3]         Vertex coordinates (3 DWORDs each)
 [1]                 Number of vertex indices - vi_count
-[vi_count]          Vertex indices
+[vi_count*4]        Vertex indices (4 DWORDs each - 4 vertices in a quad)
 [1]                 UVs count - uv_count 
-[uv_count]          UV coordinates      
+[uv_count*2]        UV coordinates (2 DWORDs each - U,V)    
 [1]                 Number of uv indices - uvi_count
-[uvi_count]         UV indices   
+[uvi_count*4]       UV indices - (4 DWORDs each - 4 UVs in a quad)  
 [1]                 Normals count - n_count 
 [n_count]           Normal coordinates      
 [1]                 Number of normal indices - ni_count
-[ni_count]          Normal indices  
+[ni_count*4]        Normal indices (4 DWORDs each - 4 normals in a quad)
 ```
 
 ## TODO
