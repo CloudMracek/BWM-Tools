@@ -6,7 +6,7 @@ from os.path import exists
 import os
 
 def pack_number(num):
-    int_to_four_bytes = struct.Struct('<I').pack
+    int_to_four_bytes = struct.Struct('>I').pack
     return int_to_four_bytes(num & 0xFFFFFFFF)
 
 
