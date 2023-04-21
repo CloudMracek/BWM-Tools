@@ -1,2 +1,2 @@
 # BWM parser
-This is a simple BWM parser. It's not documented for a purpose. I don't want you to get the crazy idea of using this thing.
+This is a simple BWM parser. It implicitly converts the input data into a `uint32_t` to parse the DWORDS without needing to bitshift. It is currently made to work with the [PSn00bSDK](https://github.com/Lameguy64/PSn00bSDK/t) since it uses it's VECTOR struct. 

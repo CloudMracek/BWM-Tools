@@ -14,7 +14,7 @@ The format is currently limited to only quads.
 ## File format
 Unlike responsible file formats this one doesn't have a header. It stores data in the following way:
 
-All values are signed 32bit integers each split into 4 bytes. (DWORD) Meaning the final size is always a multiple of 4 therefore the file is 4-byte aligned.
+All values are 32bit integers each split into 4 bytes. (DWORD) Meaning the final size is always a multiple of 4 therefore the file is 4-byte aligned.
 
 The data is stored in the file in the following order:
 ```
@@ -30,7 +30,7 @@ Size (in DWORDs)    Meaning
 [1]                 Number of uv indices - uvi_count
 [uvi_count*4]       UV indices - (4 DWORDs each - 4 UVs in a quad)  
 [1]                 Normals count - n_count 
-[n_count]           Normal coordinates      
+[n_count*3]         Normal coordinates (3 DWORDs each)  
 [1]                 Number of normal indices - ni_count
 [ni_count*4]        Normal indices (4 DWORDs each - 4 normals in a quad)
 ```
